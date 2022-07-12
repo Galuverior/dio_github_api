@@ -1,6 +1,5 @@
 import React from 'react'
 import * as S from './styled'
-import {WrapperFullname} from "./styled";
 
 const RepositoryItem = ({name, linkToRepo, fullName}) => {
 	return (

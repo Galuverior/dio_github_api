@@ -1,20 +1,22 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import RepositoryItem from '../repository-item'
 import * as S from './styled'
 import useGithub from '../../hooks/github-hooks'
 
 const Repositories = () => {
 	
-	const {githubState, getUserRepos, getUserStarred} = useGithub()
+	const { githubState, getUserRepos, getUserStarred } = useGithub()
 	const [hasUserForSearchRepos, setHasUserForSearchRepos] = useState(false)
 	
 	useEffect(() => {
 		if (githubState.user.login) {
-			getUserRepos(githubState.user.login);
-			getUserStarred(githubState.user.login);
+			getUserRepos(githubState.user.login)
+			getUserStarred(githubState.user.login)
 		}
-		setHasUserForSearchRepos(githubState.repositories);
-	}, [githubState.user.login]);
+		setHasUserForSearchRepos(githubState.repositories)
+		
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [githubState.user.login])
 	
 	return (
 		<>

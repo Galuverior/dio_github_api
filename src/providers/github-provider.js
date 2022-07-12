@@ -14,7 +14,7 @@ const GithubProvider = ({children}) => {
 		loading: false,
 		user: {
 			id: undefined,
-			avatar: undefined,
+			avatarUrl: undefined,
 			login: undefined,
 			name: undefined,
 			htmlUrl: undefined,
@@ -44,7 +44,7 @@ const GithubProvider = ({children}) => {
 					hasUser: true,
 					user: {
 						id: data.id,
-						avatar: data.avatarUrl,
+						avatar: data.avatar_url,
 						login: data.login,
 						name: data.name,
 						htmlUrl: data.htmlUrl,
@@ -53,8 +53,8 @@ const GithubProvider = ({children}) => {
 						location: data.location,
 						followers: data.followers,
 						following: data.following,
-						publicGists: data.publicGists,
-						publicRepos: data.publicRepos,
+						publicGists: data.public_gists,
+						publicRepos: data.public_repos,
 					},
 				}))
 			})
@@ -88,7 +88,7 @@ const GithubProvider = ({children}) => {
 		githubState,
 		getUser: useCallback((username) => getUser(username), []),
 		getUserRepos: useCallback((username) => getUserRepos(username), []),
-		Starred: useCallback((username) => getUserStarred(username), []),
+		getUserStarred: useCallback((username) => getUserStarred(username), []),
 	}
 	
 	return (
