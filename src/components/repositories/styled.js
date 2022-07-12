@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Tabs, TabList, Tab, TabPanel } from 'react-tabs'
+import {Tabs, TabList, Tab, TabPanel} from 'react-tabs'
 
 export const WrapperTabs = styled(Tabs)`
   font-size: 1rem;
@@ -25,13 +25,13 @@ export const WrapperTab = styled(Tab)`
   z-index: 9999;
   background-color: white;
   margin: 0.5rem;
-
+  
   &:focus {
-    outline: none;
+	outline: none;
   }
-
+  
   &.is-selected {
-    box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.2);
   }
 `
 
@@ -42,10 +42,16 @@ export const WrapperTabPanel = styled(TabPanel)`
   margin-top: -0.3125rem;
   border: 0.0625rem solid #ccc;
   display: none;
-
+  
   &.is-selected {
-    display: block;
+	display: block;
   }
 `
 
 WrapperTabPanel.tabsRole = 'TabPanel'
+
+export const WrapperList = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+`
